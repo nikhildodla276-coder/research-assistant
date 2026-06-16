@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from pydantic import BaseModel
+from researcher import run_research
 
 load_dotenv()
 
@@ -12,7 +13,7 @@ class ResearchRequest(BaseModel):
 
 @app.post("/research")
 def research(request: ResearchRequest):
-    return {"received_topic": request.topic}
+    return {"report": run_research(request.topic)}
 
 @app.get("/health")
 def health_check():
