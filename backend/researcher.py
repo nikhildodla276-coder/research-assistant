@@ -2,6 +2,9 @@ import os
 from langchain_groq import ChatGroq
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.messages import HumanMessage
+import ConversationBufferMemory
+
+memory = ConversationBufferMemory()
 
 
 def run_research(topic:str) -> str:
