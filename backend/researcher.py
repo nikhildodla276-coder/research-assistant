@@ -1,17 +1,18 @@
 import os
 from langchain_groq import ChatGroq
 from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain_core.messages import HumanMessage
-import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationChain
+from dotenv import load_dotenv
 
-memory = ConversationBufferMemory()
+load_dotenv()
 
+llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=os.getenv("GROQ_API_KEY"))
 memory = ConversationBufferMemory
+chain = ConversationChain(llm=llm, memory=memory, verbose=False)
 
 def run_research(topic:str) -> str:
-    llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=os.getenv("GROQ_API_KEY"))
     tool = TavilySearchResults(max_results=5)
     results = tool.invoke(topic)
     prompt = f"Research topic:{topic}\n\nSearch results:{str(results)}\n\nWrite a clean structured research report based on these results."
-    response = llm.invoke([HumanMessage(content=prompt)])
-    return response.content
+    return chain.predict(input=prompt)
