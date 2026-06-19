@@ -1,14 +1,14 @@
 import os
 from langchain_groq import ChatGroq
 from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain.memory import ConversationBufferMemory
-from langchain.chains import ConversationChain
+from langchain_core.chat_history import InMemoryChatMessageHistory
+from langchain_core.runnables.history import RunnableWithMessageHistory
 from dotenv import load_dotenv
 
 load_dotenv()
 
 llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=os.getenv("GROQ_API_KEY"))
-memory = ConversationBufferMemory
+memory = ConversationBufferMemory()
 chain = ConversationChain(llm=llm, memory=memory, verbose=False)
 
 def run_research(topic:str) -> str:
