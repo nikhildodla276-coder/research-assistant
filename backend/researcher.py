@@ -7,6 +7,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+store = {}
+
+def get_session_history(session_id: str) -> InMemoryChatMessageHistory:
+    if session_id not in store:
+        store[session_id] = InMemoryChatMessageHistory()
+    return store[session_id]
+
 llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=os.getenv("GROQ_API_KEY"))
 memory = ConversationBufferMemory()
 chain = ConversationChain(llm=llm, memory=memory, verbose=False)
