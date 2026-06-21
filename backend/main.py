@@ -10,10 +10,11 @@ app = FastAPI()
 
 class ResearchRequest(BaseModel):
     topic: str
+    session_id:str="default"
 
 @app.post("/research")
 def research(request: ResearchRequest):
-    return {"report": run_research(request.topic)}
+    return {"report": run_research(request.topic, request.session_id)}
 
 @app.get("/health")
 def health_check():
