@@ -28,3 +28,10 @@ def run_research(topic: str, session_id: str = "default") -> str:
         config={"configurable": {"session_id": session_id}}
     )
     return response.content
+
+def run_chat(message: str, session_id: str = "default") -> str:
+    response = chain.invoke(
+        HumanMessage(content=message),
+        config={"configurable": {"session_id": session_id}}
+    )
+    return response.content

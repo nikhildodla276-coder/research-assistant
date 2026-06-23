@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Research Assistant</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 </head>
 <body>
 <div class="container">
     <h1>AI Research Assistant</h1>
     <p>Enter a topic and get a structured research report instantly.</p>
-    
+
     <div class="input-section">
         <input type="text" id="topicInput" placeholder="Enter research topic...">
         <button id="searchBtn">Research</button>
     </div>
 
     <div id="result" class="result-section"></div>
+
+    <div id="chatSection" class="chat-section">
+        <h2>Follow-up Chat</h2>
+        <div id="chatHistory" class="chat-history"></div>
+        <div class="chat-input-section">
+            <input type="text" id="chatInput" placeholder="Ask a follow-up question...">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
 </div>
 
 <script src="script.js"></script>
