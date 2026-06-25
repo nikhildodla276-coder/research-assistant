@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from discord_notifier import notify_discord
 from researcher import run_research, run_chat
 
 load_dotenv()
@@ -21,8 +22,10 @@ class ResearchRequest(BaseModel):
     session_id:str="default"
 
 @app.post("/research")
-def research(request: ResearchRequest):
-    return {"report": run_research(request.topic, request.session_id)}
+async def research(request: ResearchRequest):
+    result = await run_research(request.topic, request.session_id)
+    await notify_discord(request.topic, request.session_id)
+    return {"report": result}
 
 @app.get("/health")
 def health_check():
@@ -32,6 +35,8 @@ class ChatRequest(BaseModel):
     message: str
     session_id: str = "default"
 
+
 @app.post("/chat")
-def chat(request: ChatRequest):
-    return {"response": run_chat(request.message, request.session_id)}
+async def chat(request: ChatRequest):
+    response = await run_chat(request.message, request.session_id)
+    return {"response": response}

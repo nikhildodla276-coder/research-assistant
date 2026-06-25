@@ -20,7 +20,7 @@ llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=os.getenv("GROQ_API_KEY"
 chain = RunnableWithMessageHistory(llm, get_session_history)
 tool = TavilySearch(max_results=5)
 
-def run_research(topic: str, session_id: str = "default") -> str:
+async def run_research(topic: str, session_id: str = "default") -> str:
     results = tool.invoke(topic)
     prompt = f"Research topic: {topic}\n\nSearch results: {str(results)}\n\nWrite a clean structured report."
     response = chain.invoke(
@@ -29,9 +29,10 @@ def run_research(topic: str, session_id: str = "default") -> str:
     )
     return response.content
 
-def run_chat(message: str, session_id: str = "default") -> str:
+async def run_chat(message: str, session_id: str = "default") -> str:
     response = chain.invoke(
         HumanMessage(content=message),
         config={"configurable": {"session_id": session_id}}
     )
     return response.content
+
