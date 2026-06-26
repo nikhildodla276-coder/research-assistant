@@ -134,4 +134,31 @@ Open `index.html` directly in your browser.
 Established the FastAPI project structure with a health check endpoint (`GET /health`) and a research route (`POST /research`). Added Pydantic request validation with `ResearchRequest` model. Verified via Swagger UI at `/docs`.
 
 ### Phase 2 — LangChain Research Pipeline
-Built `researcher.py` with `run_research` function integrating `ChatGroq` (llama-3.3-70b-versatile) and `TavilySearch` (max 5 results). The function fetches live we
+Built `researcher.py` with `run_research` function integrating `ChatGroq` (llama-3.3-70b-versatile) and `TavilySearch` (max 5 results). The function fetches live web results, builds a structured prompt, and returns an LLM-generated report.
+
+### Phase 3 — Conversation Memory
+Implemented `InMemoryChatMessageHistory` with `RunnableWithMessageHistory` for per-session memory. Added `run_chat` function for follow-up questions that skip Tavily and query the LLM directly with full conversation history. Memory is stored in a `store` dict keyed by `session_id`.
+
+### Phase 4 — Frontend
+Built a three-file dark-theme frontend (`index.html`, `style.css`, `script.js`). Features a research panel for report display and a persistent chat panel for follow-up conversation. Markdown rendering via `marked.js`. Unique `session_id` generated per page load using `Date.now()`. Added `CORSMiddleware` to `main.py`.
+
+### Phase 5 — Discord Webhook Notifications
+Created `discord_notifier.py` with an async `notify_discord(topic, session_id)` function using `httpx.AsyncClient`. After every successful research completion, a formatted notification is POSTed to a Discord channel via webhook. Integrated into the `/research` route in `main.py`.
+
+---
+
+## Environment Variables
+
+| Variable | Description |
+|---|---|
+| `GROQ_API_KEY` | Groq API key for LLM access |
+| `TAVILY_API_KEY` | Tavily API key for web search |
+| `DISCORD_WEBHOOK_URL` | Discord channel webhook URL for notifications |
+
+---
+
+## Author
+
+**Nikhil Dodla**
+BTech CSE AIML — Kalinga University, Raipur
+[GitHub](https://github.com/nikhildodla276-coder)
