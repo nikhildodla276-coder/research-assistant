@@ -162,3 +162,5 @@ Created `discord_notifier.py` with an async `notify_discord(topic, session_id)` 
 **Nikhil Dodla**
 BTech CSE AIML — Kalinga University, Raipur
 [GitHub](https://github.com/nikhildodla276-coder)
+
+currently working on building a concrete plan on how to modify my present working research assistant project to a real world useful tool which helps my production more siginificantly by replacing all the boring tasks to be done by AI.
