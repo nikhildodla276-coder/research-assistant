@@ -164,3 +164,23 @@ BTech CSE AIML — Kalinga University, Raipur
 [GitHub](https://github.com/nikhildodla276-coder)
 
 currently working on building a concrete plan on how to modify my present working research assistant project to a real world useful tool which helps my production more siginificantly by replacing all the boring tasks to be done by AI.
+
+## What We Are Building — Final Confirmed Plan
+
+**Project:** Personal Research Assistant — upgraded from Project 4.
+
+**Two modes:**
+Research mode — you ask, it fetches from trusted sources, answers with full attribution, you ask follow-ups grounded in fetched content.
+Daily Brief mode — runs automatically, monitors sources, sends digest to Discord.
+
+**Sources:**
+Hacker News API, Official documentation via direct fetching, Wellfound via Tavily domain filter, GitHub via Tavily domain filter.
+
+**LLM Pipeline:**
+Two stages — small fast model for filtering, stronger model for analysis and explanation.
+
+**Non-negotiables:**
+Every response shows source URL, author, date, exact excerpt. LangSmith tracing on every LLM call. Failure handling for every external service. Caching to avoid redundant fetches. Your profile as permanent context in every query.
+
+**Frontend:**
+Two mode toggle, one search bar, results as attributed cards, chat panel grounded in fetched content.
