@@ -184,3 +184,12 @@ Every response shows source URL, author, date, exact excerpt. LangSmith tracing 
 
 **Frontend:**
 Two mode toggle, one search bar, results as attributed cards, chat panel grounded in fetched content.
+
+- Build query params dict and encode full Algolia search URL
+- Add httpx GET request with raise_for_status()
+- Handle ConnectError, TimeoutException, and HTTPStatusError
+  with structured error dicts
+
+fetch_hn is not yet complete: response parsing and the
+extraction loop (8-field clean dicts from raw hits) are
+still pending.
