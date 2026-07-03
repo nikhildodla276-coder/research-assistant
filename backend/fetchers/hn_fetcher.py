@@ -19,3 +19,20 @@ def fetch_hn(query:str, tags:str="story", min_points:int=20):
         return{"error": f"HN API returned error: {e.response.status_code}"}
     
     parsed_response = response.json()
+
+    results =[]
+
+    for hit in parsed_response["hits"]:
+        clean_hit = {
+            "title": hit["title"],
+            "url": hit["url"],
+            "hn_discussion": f"https://news.ycombinator.com/item?id={hit['story_id']}",
+            "author": hit["author"],
+            "points": hit["points"],
+            "num_comments": hit["num_comments"],
+            "posted_at": hit["created_at"],
+            "source": "Hacker News"
+        }
+        results.append(clean_hit)
+
+    return results
