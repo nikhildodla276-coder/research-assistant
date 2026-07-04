@@ -36,3 +36,9 @@ def fetch_hn(query:str, tags:str="story", min_points:int=20):
         results.append(clean_hit)
 
     return results
+
+
+if __name__ == "__main__":
+    results = fetch_hn("LangChain")
+    for r in results:
+        print(r)
