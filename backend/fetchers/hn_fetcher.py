@@ -16,7 +16,8 @@ def fetch_hn(query:str, tags:str="story", min_points:int=20):
     except httpx.TimeoutException:
         return{"error": "HN API timed out. Try again."}
     except httpx.HTTPStatusError as e:
-        return{"error": f"HN API returned error: {e.response.status_code}"}
+        print(e.response.text)  # temporary — shows the real error
+        return {"error": f"HN API returned error: {e.response.status_code}"}
     
     parsed_response = response.json()
 
