@@ -3,7 +3,7 @@ from urllib.parse import urlencode
 
 def fetch_hn(query:str, tags:str="story", min_points:int=20):
     url_parms = {
-        "query": query, "tags": tags, "numericFilters": f"points>{min_points}", "hitsPerPage": 20
+        "query": query, "tags": tags, "hitsPerPage": 20
     }
     url = "https://hn.algolia.com/api/v1/search" + "?" + urlencode(url_parms)
 
@@ -34,7 +34,8 @@ def fetch_hn(query:str, tags:str="story", min_points:int=20):
             "posted_at": hit["created_at"],
             "source": "Hacker News"
         }
-        results.append(clean_hit)
+        if hit["points"] >= min_points:
+            results.append(clean_hit)
 
     return results
 
