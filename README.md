@@ -193,3 +193,4 @@ Two mode toggle, one search bar, results as attributed cards, chat panel grounde
 fetch_hn is not yet complete: response parsing and the
 extraction loop (8-field clean dicts from raw hits) are
 now completed.
+add sources.py with trusted domains list.
