@@ -168,6 +168,7 @@ currently working on building a concrete plan on how to modify my present workin
 ## What We Are Building — Final Confirmed Plan
 
 **Project:** Personal Research Assistant — upgraded from Project 4.
+Project identity, restated precisely: not a generic research assistant. A system built to answer one person's (yours) specific question — what skills, eligibility criteria, and projects does a beginner need to land a paid international remote internship, then a full-time remote role — sourced only from trusted, attributed data, personalized to your actual context, kept efficient under real API/token/cost constraints.
 
 **Two modes:**
 Research mode — you ask, it fetches from trusted sources, answers with full attribution, you ask follow-ups grounded in fetched content.
