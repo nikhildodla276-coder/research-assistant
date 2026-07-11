@@ -186,12 +186,9 @@ Every response shows source URL, author, date, exact excerpt. LangSmith tracing 
 **Frontend:**
 Two mode toggle, one search bar, results as attributed cards, chat panel grounded in fetched content.
 
-- Build query params dict and encode full Algolia search URL
-- Add httpx GET request with raise_for_status()
-- Handle ConnectError, TimeoutException, and HTTPStatusError
-  with structured error dicts
-
-fetch_hn is not yet complete: response parsing and the
-extraction loop (8-field clean dicts from raw hits) are
-now completed.
-add sources.py with trusted domains list.
+## Architecture
+RemoteOK is the first fetcher to build, understood honestly as a broad-but-large remote board requiring real tag/keyword filtering to surface AI-relevant roles — not an AI-specific source.
+Wellfound, LinkedIn (indirect via Tavily only), and later Arbeitnow/Jobicy/Himalayas remain the next platforms, added when a specific gap shows up, not preemptively.
+Career-context/"why" source category confirmed as necessary, domains not yet chosen.
+Dedicated new-skill-learning deferred until jobs+career data confirms priorities; learning-through-building continues implicitly and isn't paused.
+Daily Brief mode identified as the eventual home for recurring "what am I lacking, what's shifted" questions — not built yet, Phase 2 per original blueprint.
