@@ -55,8 +55,11 @@ def fetch_jobs(tag: str = "machine-learning"):
 
     return results
 
-
 if __name__ == "__main__":
     results = fetch_jobs("machine-learning")
-    for r in results:
-        print(r["title"], "-", r["company"], "- spam flag:", r["likely_spam"])
+ 
+    if isinstance(results, dict) and "error" in results:
+        print("Fetch failed:", results["error"])
+    else:
+        for r in results:
+            print(r["title"], "-", r["company"], "- spam flag:", r["likely_spam"])
