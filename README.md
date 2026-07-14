@@ -192,3 +192,11 @@ Wellfound, LinkedIn (indirect via Tavily only), and later Arbeitnow/Jobicy/Himal
 Career-context/"why" source category confirmed as necessary, domains not yet chosen.
 Dedicated new-skill-learning deferred until jobs+career data confirms priorities; learning-through-building continues implicitly and isn't paused.
 Daily Brief mode identified as the eventual home for recurring "what am I lacking, what's shifted" questions — not built yet, Phase 2 per original blueprint.
+
+- Confirmed tags=machine-learning query returns real, mostly-legitimate ML/AI postings
+- Confirmed spam flag (tag_count > 10) correctly stays False on clean, non-tag-stuffed results
+- Identified real data-quality gaps to address: non-role postings (e.g. generic "apply anyway"
+  listings), duplicate postings from same company, and adjacent-but-not-target roles
+  (management/architecture) passing the tag filter
+- Fixed __main__ block to handle fetch_jobs() error-dict return path instead of assuming
+  success and crashing on TypeError
