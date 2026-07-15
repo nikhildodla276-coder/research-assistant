@@ -200,3 +200,5 @@ Daily Brief mode identified as the eventual home for recurring "what am I lackin
   (management/architecture) passing the tag filter
 - Fixed __main__ block to handle fetch_jobs() error-dict return path instead of assuming
   success and crashing on TypeError
+
+  currently at confirming reliable sources to fetch
