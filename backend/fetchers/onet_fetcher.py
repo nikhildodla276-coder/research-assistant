@@ -1,19 +1,3 @@
-"""
-onet_fetcher.py
-
-Fetches structured occupational data from O*NET Web Services.
-Free, government-run REST API — requires a free API key from
-https://services.onetcenter.org/
-
-WHY THIS FILE IS SIMPLE: O*NET already publishes structured JSON, same
-category as RemoteOK's API. No search, no source-scoring, no LLM
-extraction needed for the raw fetch itself.
-
-WHAT THIS ANSWERS: "what does this occupation involve, what skills/tools
-does it require, what's its outlook" — NOT "why is there a hiring surge
-right now" (that's the separate, harder BLS/Tavily fetcher, built after
-this one is tested).
-"""
 
 import httpx
 import asyncio
