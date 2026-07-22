@@ -202,3 +202,4 @@ Daily Brief mode identified as the eventual home for recurring "what am I lackin
   success and crashing on TypeError
 
 added jobicy_fetcher to backend fetchers
+added onet_fetcher to backend fetchers
