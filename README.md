@@ -201,5 +201,10 @@ Daily Brief mode identified as the eventual home for recurring "what am I lackin
 - Fixed __main__ block to handle fetch_jobs() error-dict return path instead of assuming
   success and crashing on TypeError
 
+## Project Documentation
+Detailed build history, architecture decisions, and fetcher notes 
+now live in a structured docs folder (not in this README) — kept 
+in personal notes, updated as the project grows.
+
 added jobicy_fetcher to backend fetchers
 added onet_fetcher to backend fetchers
