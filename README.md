@@ -167,24 +167,54 @@ currently working on building a concrete plan on how to modify my present workin
 
 ## What We Are Building — Final Confirmed Plan
 
-**Project:** Personal Research Assistant — upgraded from Project 4.
-Project identity, restated precisely: not a generic research assistant. A system built to answer one person's (yours) specific question — what skills, eligibility criteria, and projects does a beginner need to land a paid international remote internship, then a full-time remote role — sourced only from trusted, attributed data, personalized to your actual context, kept efficient under real API/token/cost constraints.
+# Research Assistant — What, Why, How
 
-**Two modes:**
-Research mode — you ask, it fetches from trusted sources, answers with full attribution, you ask follow-ups grounded in fetched content.
-Daily Brief mode — runs automatically, monitors sources, sends digest to Discord.
+## What this is
+A personal AI research tool. It searches the web, summarizes findings 
+with an LLM, supports follow-up Q&A, and preserves source attribution 
+on every claim it stores. Two planned modes:
+- Research mode — on-demand queries, built and working
+- Daily Brief mode — not yet designed
 
-**Sources:**
-Hacker News API, Official documentation via direct fetching, Wellfound via Tavily domain filter, GitHub via Tavily domain filter.
+## Why it exists
+Built to solve a real, specific problem in my own career search: 
+finding a full-time remote AI/backend engineering role at a small 
+(5-20 person), remote-native, USD/GBP/EUR-funded startup doing real 
+AI/LLM-integration work — right after graduation, roughly two years 
+from now.
 
-**LLM Pipeline:**
-Two stages — small fast model for filtering, stronger model for analysis and explanation.
+The real hiring mechanism for this company type is founder networks, 
+direct outreach, and referrals — not cold platform applications. But 
+before any of that outreach can be credible, I need to know, at 
+volume: what roles/skills the market actually wants, and which 
+specific companies are legitimate, funded, and doing the work they 
+claim to do. That's what this project does — it is a market-
+intelligence and company-research tool, not a job-application tool.
 
-**Non-negotiables:**
-Every response shows source URL, author, date, exact excerpt. LangSmith tracing on every LLM call. Failure handling for every external service. Caching to avoid redundant fetches. Your profile as permanent context in every query.
+## How it helps me
+1. Fetches job postings at volume from multiple platforms
+2. Researches each relevant posting's company completely — funding, 
+   team size, remote-native evidence, real engineering work — 
+   validating or disproving fit against my four-filter criteria
+3. Analyzes patterns across everything validated — common skills, 
+   stacks, and problems being solved
+4. Feeds two parallel tracks going forward: what skills to actually 
+   learn, and which specific companies are worth targeting for 
+   contribution/DMs/cold outreach
 
-**Frontend:**
-Two mode toggle, one search bar, results as attributed cards, chat panel grounded in fetched content.
+## Future use case
+Once mature, this becomes the tool I check regularly (Daily Brief 
+mode) the way I'd check news — surfacing new relevant postings, 
+newly-discovered legitimate companies, and shifts in what skills are 
+in demand, right up to graduation.
+
+## Current status
+Research mode: built (FastAPI + LangChain + Groq + Tavily pipeline, 
+conversation memory, frontend UI). 
+Daily Brief mode: not yet designed.
+Fetchers: hn_fetcher.py and job_fetchers.py (RemoteOK) done and 
+tested. Himalayas, Jobicy, Arbeitnow, onet_fetcher.py designed or 
+in progress, not yet complete.
 
 ## Architecture
 RemoteOK is the first fetcher to build, understood honestly as a broad-but-large remote board requiring real tag/keyword filtering to surface AI-relevant roles — not an AI-specific source.
