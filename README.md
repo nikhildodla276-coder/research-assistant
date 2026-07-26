@@ -217,19 +217,44 @@ tested. Himalayas, Jobicy, Arbeitnow, onet_fetcher.py designed or
 in progress, not yet complete.
 
 ## Architecture
-RemoteOK is the first fetcher to build, understood honestly as a broad-but-large remote board requiring real tag/keyword filtering to surface AI-relevant roles — not an AI-specific source.
-Wellfound, LinkedIn (indirect via Tavily only), and later Arbeitnow/Jobicy/Himalayas remain the next platforms, added when a specific gap shows up, not preemptively.
-Career-context/"why" source category confirmed as necessary, domains not yet chosen.
-Dedicated new-skill-learning deferred until jobs+career data confirms priorities; learning-through-building continues implicitly and isn't paused.
-Daily Brief mode identified as the eventual home for recurring "what am I lacking, what's shifted" questions — not built yet, Phase 2 per original blueprint.
+# System Overview
 
-- Confirmed tags=machine-learning query returns real, mostly-legitimate ML/AI postings
-- Confirmed spam flag (tag_count > 10) correctly stays False on clean, non-tag-stuffed results
-- Identified real data-quality gaps to address: non-role postings (e.g. generic "apply anyway"
-  listings), duplicate postings from same company, and adjacent-but-not-target roles
-  (management/architecture) passing the tag filter
-- Fixed __main__ block to handle fetch_jobs() error-dict return path instead of assuming
-  success and crashing on TypeError
+## The pipeline, end to end
+1. A fetcher pulls raw data from an external source (job board API, 
+   O*NET, etc.)
+2. The raw data passes through a cheap LLM filter before anything 
+   is stored — nothing unfiltered persists (see 04_Storage_and_
+   Attribution.md)
+3. Filtered records are written to storage with source attribution 
+   intact
+4. A router checks the query/topic against a known-sources list 
+   (sources.py) — on a match, proceeds; on no match, logs the gap 
+   for manual review rather than guessing
+5. For research queries needing synthesis (not just retrieval), a 
+   more capable LLM analyzes across multiple stored records
+
+## The two modes
+- Research mode: on-demand — ask a question, get a sourced answer. 
+  Built and working.
+- Daily Brief mode: a regular, recurring surfacing of new relevant 
+  postings/companies/skill shifts. Not yet designed.
+
+## The three data categories, and why this build order
+1. Job postings — what the market wants, right now
+2. Career-context — why those roles/companies exist, whether they're 
+   legitimate
+3. Documentation/skills — how to actually learn what's in demand
+
+Category 3 is deliberately deferred until 1 and 2 produce real, 
+validated findings — no point researching how to learn a skill the 
+market may not actually be asking for at meaningful volume.
+
+## Fetcher status (as of project reorganization, July 2026)
+Built and tested: hn_fetcher.py, job_fetchers.py (RemoteOK)
+Designed, not built: Himalayas, Jobicy, Arbeitnow fetchers, BLS/
+market-analysis fetcher, company due-diligence fetcher, 
+pattern_analysis.py
+Code written, not tested: onet_fetcher.py (needs API key + live run)
 
 ## Project Documentation
 Detailed build history, architecture decisions, and fetcher notes 
