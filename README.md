@@ -248,18 +248,3 @@ in progress, not yet complete.
 Category 3 is deliberately deferred until 1 and 2 produce real, 
 validated findings — no point researching how to learn a skill the 
 market may not actually be asking for at meaningful volume.
-
-## Fetcher status (as of project reorganization, July 2026)
-Built and tested: hn_fetcher.py, job_fetchers.py (RemoteOK)
-Designed, not built: Himalayas, Jobicy, Arbeitnow fetchers, BLS/
-market-analysis fetcher, company due-diligence fetcher, 
-pattern_analysis.py
-Code written, not tested: onet_fetcher.py (needs API key + live run)
-
-## Project Documentation
-Detailed build history, architecture decisions, and fetcher notes 
-now live in a structured docs folder (not in this README) — kept 
-in personal notes, updated as the project grows.
-
-added jobicy_fetcher to backend fetchers
-added onet_fetcher to backend fetchers
