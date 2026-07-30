@@ -54,10 +54,14 @@ def fetch_jobs(tag: str = "machine-learning"):
     return results
 
 if __name__ == "__main__":
-    results = fetch_jobs("machine-learning")
-    if isinstance(results, dict) and "error" in results:
-        print("Fetch failed:", results["error"])
-    else:
-        print(f"Fetched {len(results)} jobs.")
-        for r in results:
-            print(r["title"], "-", r["company"], "- spam flag:", r["likely_spam"])
+    tags_to_test = ["ai", "python", "backend", "automation", "devops", "saas"]
+
+    for tag in tags_to_test:
+        print(f"\n=== Testing tags: {tag} ===")
+        results = fetch_jobs(tag)
+        if isinstance(results, dict) and "error" in results:
+            print("Fetch failed:", results["error"])
+        else:
+            print(f"Fetched {len(results)} jobs.")
+            for r in results:
+                print(r["title"], "-", r["company"])
