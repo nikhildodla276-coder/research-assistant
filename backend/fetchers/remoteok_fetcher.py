@@ -1,4 +1,5 @@
 import httpx
+import json
 from bs4 import BeautifulSoup
 
 MAX_REASONABLE_TAGS = 10  # postings with more tags than this are likely spam/tag-stuffing
@@ -23,7 +24,13 @@ def fetch_jobs(tag: str = "machine-learning"):
         print(e.response.text)
         return {"error": f"RemoteOK API returned error: {e.response.status_code}"}
 
-    parsed_response = response.json()
+
+    try:
+        parsed_response = response.json()
+    except json.JSONDecodeError:
+        return {"error": "RemoteOK API returned invalid JSON. Try again."}
+
+
     results = []
 
     for item in parsed_response:
