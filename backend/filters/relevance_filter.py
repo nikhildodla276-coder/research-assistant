@@ -45,13 +45,22 @@ def filter_relevant_jobs(jobs: list) -> list:
 
         raw_reply = response.choices[0].message.content
 
+        
         try:
             verdicts = json.loads(raw_reply)
+            if len(verdicts) != len(batch):
+                print(f"Expected {len(batch)} verdicts, got {len(verdicts)}. Raw reply:", raw_reply)
+                verdicts = ["unsure"] * len(batch)
         except json.JSONDecodeError:
             print("Model did not return valid JSON:", raw_reply)
             verdicts = ["unsure"] * len(batch)
 
+
+        VALID_VERDICTS = {"relevant", "not-relevant", "unsure"}
+
         for job, verdict in zip(batch, verdicts):
+            if verdict not in VALID_VERDICTS:
+                verdict = "unsure"
             job["relevance_verdict"] = verdict
             results.append(job)
 
