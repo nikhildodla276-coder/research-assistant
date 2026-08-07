@@ -256,3 +256,4 @@ Designed, not built: Himalayas, Jobicy, Arbeitnow fetchers, BLS/
 Modified remoteOK fetcher with tags including for fetching from the server side with clear reasoning about the code
 Added relevance_filter.py to backend filters which is stage 1 filter
 complete discussion about the both fetcher and filter code with it's use case for future and error handling strategies
+started discussing about well found from it's origin, use case, working criteria etc before starting to build his fetcher 
