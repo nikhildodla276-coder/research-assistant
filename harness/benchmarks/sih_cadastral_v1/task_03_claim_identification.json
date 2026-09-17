@@ -1,0 +1,26 @@
+{
+  "benchmark_id": "sih_cadastral_v1",
+  "task_id": "sih_cadastral_03_claim_identification",
+  "task_version": "1.0.0",
+  "task_category": "claim_identification",
+  "task_description": "Identify individual atomic factual assertions from technical survey report.",
+  "input_prompt": "Identify individual factual claims from this text: 'DGPS base stations achieved sub-centimeter positional accuracy across all control points. However, vector parcel boundaries derived from legacy cloth maps exhibited up to 1.5 meter distortion. Orthorectified drone tiles resolved 85% of boundary overlaps.' Return a JSON object with a key 'claims' containing a list of strings.",
+  "expected_capability": "Extract individual atomic factual claims.",
+  "expected_output_contract": {
+    "format": "json",
+    "required_keys": ["claims"],
+    "min_items": 2
+  },
+  "domain": {
+    "name": "urban_cadastral_mapping",
+    "source_context": "SIH urban land-record problem domain",
+    "version": "v1"
+  },
+  "evaluation_dimensions": [
+    "valid_json",
+    "claims_list_presence",
+    "min_items_threshold"
+  ],
+  "safety_notes": "Controlled benchmark task. Offline execution only."
+}
+

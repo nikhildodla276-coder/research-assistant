@@ -1,0 +1,22 @@
+{
+  "candidate_id": "anthropic_claude_opus",
+  "candidate_type": "INFERENCE_MODEL",
+  "provider_id": "anthropic",
+  "technical_identifier": "claude-3-opus-20240229",
+  "display_name": "Anthropic Claude 3 Opus (Paid Only)",
+  "access_mode": "API",
+  "billing_status": "PAID_ONLY",
+  "auth_env_var": "ANTHROPIC_API_KEY",
+  "card_required": true,
+  "requires_user_approval": true,
+  "claimed_capabilities": [
+    "deep_reasoning"
+  ],
+  "provenance": {
+    "source": "anthropic_console"
+  },
+  "verification_state": "UNVERIFIED",
+  "freshness_ttl_days": 14,
+  "last_verified_at": null
+}
+

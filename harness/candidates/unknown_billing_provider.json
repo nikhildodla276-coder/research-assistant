@@ -1,0 +1,22 @@
+{
+  "candidate_id": "unvetted_ai_service",
+  "candidate_type": "INFERENCE_MODEL",
+  "provider_id": "sketchy_labs",
+  "technical_identifier": "sketchy-llm-v1",
+  "display_name": "Unvetted AI Service (Unknown Billing)",
+  "access_mode": "API",
+  "billing_status": "UNKNOWN",
+  "auth_env_var": "SKETCHY_API_KEY",
+  "card_required": false,
+  "requires_user_approval": false,
+  "claimed_capabilities": [
+    "text_generation"
+  ],
+  "provenance": {
+    "source": "unvetted_blog"
+  },
+  "verification_state": "UNVERIFIED",
+  "freshness_ttl_days": 14,
+  "last_verified_at": null
+}
+

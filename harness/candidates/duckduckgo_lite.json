@@ -1,0 +1,25 @@
+{
+  "candidate_id": "duckduckgo_lite",
+  "candidate_type": "RETRIEVAL_TOOL",
+  "provider_id": "duckduckgo",
+  "technical_identifier": "duckduckgo_html_search",
+  "display_name": "DuckDuckGo Lite Web Search",
+  "access_mode": "OPEN_SOURCE",
+  "billing_status": "FREE_SERVICE_ACCESS",
+  "auth_env_var": null,
+  "card_required": false,
+  "requires_user_approval": false,
+  "claimed_capabilities": [
+    "web_search",
+    "zero_auth",
+    "public_index"
+  ],
+  "provenance": {
+    "source": "public_html_endpoint",
+    "url": "https://html.duckduckgo.com/html/"
+  },
+  "verification_state": "UNVERIFIED",
+  "freshness_ttl_days": 14,
+  "last_verified_at": null
+}
+

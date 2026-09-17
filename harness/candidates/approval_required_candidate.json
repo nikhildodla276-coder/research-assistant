@@ -1,0 +1,22 @@
+{
+  "candidate_id": "experimental_high_cost_probe",
+  "candidate_type": "INFERENCE_MODEL",
+  "provider_id": "groq",
+  "technical_identifier": "llama-3.3-70b-versatile",
+  "display_name": "Groq LLaMA 3.3 70B (Approval Required)",
+  "access_mode": "API",
+  "billing_status": "FREE_TIER",
+  "auth_env_var": "GROQ_API_KEY",
+  "card_required": false,
+  "requires_user_approval": true,
+  "claimed_capabilities": [
+    "fast_inference"
+  ],
+  "provenance": {
+    "source": "internal_policy_flag"
+  },
+  "verification_state": "UNVERIFIED",
+  "freshness_ttl_days": 14,
+  "last_verified_at": null
+}
+

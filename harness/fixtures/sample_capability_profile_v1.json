@@ -1,0 +1,167 @@
+{
+  "candidate_id": "groq_llama33_70b",
+  "benchmark_suite_id": "sih_cadastral_v1",
+  "benchmark_suite_version": "1.0.0",
+  "evaluated_task_count": 6,
+  "successful_task_count": 6,
+  "failed_task_count": 0,
+  "blocked_task_count": 0,
+  "task_results": [
+    {
+      "task_id": "sih_cadastral_01_json_generation",
+      "task_version": "1.0.0",
+      "task_category": "structured_json_generation",
+      "execution_status": "SUCCESS",
+      "contract_satisfied": true,
+      "failure_classification": null,
+      "latency_ms": 142.5,
+      "provenance_state": "NOT_AVAILABLE",
+      "evidence_id": "ev_task_01_groq_001"
+    },
+    {
+      "task_id": "sih_cadastral_02_structured_extraction",
+      "task_version": "1.0.0",
+      "task_category": "structured_extraction",
+      "execution_status": "SUCCESS",
+      "contract_satisfied": true,
+      "failure_classification": null,
+      "latency_ms": 165.2,
+      "provenance_state": "NOT_AVAILABLE",
+      "evidence_id": "ev_task_02_groq_002"
+    },
+    {
+      "task_id": "sih_cadastral_03_claim_identification",
+      "task_version": "1.0.0",
+      "task_category": "claim_identification",
+      "execution_status": "SUCCESS",
+      "contract_satisfied": true,
+      "failure_classification": null,
+      "latency_ms": 138.9,
+      "provenance_state": "NOT_AVAILABLE",
+      "evidence_id": "ev_task_03_groq_003"
+    },
+    {
+      "task_id": "sih_cadastral_04_source_aware_grounding",
+      "task_version": "1.0.0",
+      "task_category": "source_aware_response",
+      "execution_status": "SUCCESS",
+      "contract_satisfied": true,
+      "failure_classification": null,
+      "latency_ms": 190.1,
+      "provenance_state": "MODEL_CLAIM_ONLY",
+      "evidence_id": "ev_task_04_groq_004"
+    },
+    {
+      "task_id": "sih_cadastral_05_research_planning",
+      "task_version": "1.0.0",
+      "task_category": "research_planning",
+      "execution_status": "SUCCESS",
+      "contract_satisfied": true,
+      "failure_classification": null,
+      "latency_ms": 155.0,
+      "provenance_state": "NOT_AVAILABLE",
+      "evidence_id": "ev_task_05_groq_005"
+    },
+    {
+      "task_id": "sih_cadastral_06_knowledge_gap_detection",
+      "task_version": "1.0.0",
+      "task_category": "knowledge_gap_identification",
+      "execution_status": "SUCCESS",
+      "contract_satisfied": true,
+      "failure_classification": null,
+      "latency_ms": 149.3,
+      "provenance_state": "NOT_AVAILABLE",
+      "evidence_id": "ev_task_06_groq_006"
+    }
+  ],
+  "capability_observations": [
+    {
+      "task_category": "claim_identification",
+      "total_tasks": 1,
+      "successful_tasks": 1,
+      "contracts_satisfied": 1,
+      "contract_satisfaction_rate": 1.0,
+      "observed_capabilities": ["claim_identification:contract_satisfied"],
+      "evidence_count": 1
+    },
+    {
+      "task_category": "knowledge_gap_identification",
+      "total_tasks": 1,
+      "successful_tasks": 1,
+      "contracts_satisfied": 1,
+      "contract_satisfaction_rate": 1.0,
+      "observed_capabilities": ["knowledge_gap_identification:contract_satisfied"],
+      "evidence_count": 1
+    },
+    {
+      "task_category": "research_planning",
+      "total_tasks": 1,
+      "successful_tasks": 1,
+      "contracts_satisfied": 1,
+      "contract_satisfaction_rate": 1.0,
+      "observed_capabilities": ["research_planning:contract_satisfied"],
+      "evidence_count": 1
+    },
+    {
+      "task_category": "source_aware_response",
+      "total_tasks": 1,
+      "successful_tasks": 1,
+      "contracts_satisfied": 1,
+      "contract_satisfaction_rate": 1.0,
+      "observed_capabilities": ["source_aware_response:contract_satisfied"],
+      "evidence_count": 1
+    },
+    {
+      "task_category": "structured_extraction",
+      "total_tasks": 1,
+      "successful_tasks": 1,
+      "contracts_satisfied": 1,
+      "contract_satisfaction_rate": 1.0,
+      "observed_capabilities": ["structured_extraction:contract_satisfied"],
+      "evidence_count": 1
+    },
+    {
+      "task_category": "structured_json_generation",
+      "total_tasks": 1,
+      "successful_tasks": 1,
+      "contracts_satisfied": 1,
+      "contract_satisfaction_rate": 1.0,
+      "observed_capabilities": ["structured_json_generation:contract_satisfied"],
+      "evidence_count": 1
+    }
+  ],
+  "contract_satisfaction_observations": {
+    "total_evaluated": 6,
+    "satisfied_count": 6,
+    "unsatisfied_count": 0,
+    "satisfaction_rate": 1.0
+  },
+  "observed_failure_classes": {},
+  "observed_latency_statistics": {
+    "sample_count": 6,
+    "min_ms": 138.9,
+    "max_ms": 190.1,
+    "mean_ms": 156.83,
+    "median_ms": 152.15
+  },
+  "provenance_observations": {
+    "total_observations": 6,
+    "retrieved_by_system_count": 0,
+    "model_claim_only_count": 1,
+    "not_available_count": 5,
+    "verification_pending_count": 0,
+    "total_model_claimed_sources": 2,
+    "total_system_retrieved_sources": 0
+  },
+  "benchmark_versions": ["1.0.0"],
+  "evidence_references": [
+    "ev_task_01_groq_001",
+    "ev_task_02_groq_002",
+    "ev_task_03_groq_003",
+    "ev_task_04_groq_004",
+    "ev_task_05_groq_005",
+    "ev_task_06_groq_006"
+  ],
+  "generated_at": "2026-09-17T04:50:00+00:00"
+}
+

@@ -1,0 +1,26 @@
+{
+  "benchmark_id": "sih_cadastral_v1",
+  "task_id": "sih_cadastral_06_knowledge_gap_detection",
+  "task_version": "1.0.0",
+  "task_category": "knowledge_gap_identification",
+  "task_description": "Identify missing technical survey parameters from an incomplete cadastral specification.",
+  "input_prompt": "The survey project plan specifies: 'Fly drone over Ward 12 at 120m AGL to produce cadastral boundary map.' Identify what crucial technical information is missing to evaluate feasibility. Output a JSON object with a key 'identified_gaps' containing a list of strings.",
+  "expected_capability": "Detect missing technical constraints and knowledge gaps.",
+  "expected_output_contract": {
+    "format": "json",
+    "required_keys": ["identified_gaps"],
+    "min_items": 2
+  },
+  "domain": {
+    "name": "urban_cadastral_mapping",
+    "source_context": "SIH urban land-record problem domain",
+    "version": "v1"
+  },
+  "evaluation_dimensions": [
+    "valid_json",
+    "identified_gaps_presence",
+    "min_items_threshold"
+  ],
+  "safety_notes": "Controlled benchmark task. Offline execution only."
+}
+

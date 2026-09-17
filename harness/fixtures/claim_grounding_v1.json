@@ -1,0 +1,79 @@
+{
+  "fixture_id": "claim_grounding_v1",
+  "version": "1.0.0",
+  "domain": "career_research",
+  "objective": "Verify factual assertions are grounded strictly in provided evidence snippets without external hallucination or citation of nonexistent sources.",
+  "input_payload": {
+    "evidence": [
+      {
+        "id": 1,
+        "text": "ACME Corp requires 3+ years experience in Python and Kubernetes."
+      },
+      {
+        "id": 2,
+        "text": "The position is 100% remote within North America."
+      }
+    ],
+    "prompt": "Extract the technical requirements and location constraints with bracketed citations."
+  },
+  "required_behavior": [
+    "valid_json",
+    "bracketed_citations",
+    "valid_evidence_ids_only"
+  ],
+  "expected_structure": {
+    "type": "object",
+    "required": [
+      "claims"
+    ],
+    "properties": {
+      "claims": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "claim_text",
+            "evidence_ids"
+          ],
+          "properties": {
+            "claim_text": {
+              "type": "string"
+            },
+            "evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "evaluation_rules": [
+    {
+      "rule": "valid_json",
+      "expected": true
+    },
+    {
+      "rule": "schema_conformance",
+      "expected": 1.0
+    },
+    {
+      "rule": "valid_evidence_citations",
+      "valid_ids": [
+        1,
+        2
+      ]
+    }
+  ],
+  "allowed_variance": {
+    "claim_ordering_independent": true
+  },
+  "failure_conditions": [
+    "malformed_json",
+    "fabricated_citation_id",
+    "empty_claims"
+  ]
+}
+

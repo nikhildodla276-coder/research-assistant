@@ -1,0 +1,25 @@
+{
+  "candidate_id": "local_ollama_llama32",
+  "candidate_type": "INFERENCE_MODEL",
+  "provider_id": "ollama",
+  "technical_identifier": "llama3.2:3b",
+  "display_name": "Ollama LLaMA 3.2 3B (Local Free)",
+  "access_mode": "LOCAL",
+  "billing_status": "LOCAL_FREE",
+  "auth_env_var": null,
+  "card_required": false,
+  "requires_user_approval": false,
+  "claimed_capabilities": [
+    "text_completion",
+    "offline_inference",
+    "local_privacy"
+  ],
+  "provenance": {
+    "source": "local_daemon",
+    "endpoint": "http://localhost:11434"
+  },
+  "verification_state": "UNVERIFIED",
+  "freshness_ttl_days": 14,
+  "last_verified_at": null
+}
+

@@ -1,0 +1,22 @@
+{
+  "candidate_id": "chatgpt_web_ui",
+  "candidate_type": "INFERENCE_MODEL",
+  "provider_id": "openai_web",
+  "technical_identifier": "manual_browser_session",
+  "display_name": "ChatGPT Web UI (Manual Access Mode)",
+  "access_mode": "MANUAL",
+  "billing_status": "FREE_TIER",
+  "auth_env_var": null,
+  "card_required": false,
+  "requires_user_approval": false,
+  "claimed_capabilities": [
+    "chat"
+  ],
+  "provenance": {
+    "source": "browser_session"
+  },
+  "verification_state": "UNVERIFIED",
+  "freshness_ttl_days": 14,
+  "last_verified_at": null
+}
+

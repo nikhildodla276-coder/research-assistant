@@ -1,0 +1,39 @@
+{
+  "fixture_id": "basic_generation_v1",
+  "version": "1.0.0",
+  "domain": "generic",
+  "objective": "Validate basic text completion, non-empty response, and latency bounds.",
+  "input_payload": {
+    "prompt": "State the definition of an application programming interface in one concise sentence."
+  },
+  "required_behavior": [
+    "non_empty_response",
+    "min_chars_20",
+    "max_chars_500"
+  ],
+  "expected_structure": null,
+  "evaluation_rules": [
+    {
+      "rule": "non_empty",
+      "expected": true
+    },
+    {
+      "rule": "min_length",
+      "min_chars": 20
+    },
+    {
+      "rule": "max_length",
+      "max_chars": 500
+    }
+  ],
+  "allowed_variance": {
+    "case_insensitive": true,
+    "whitespace_trimmed": true
+  },
+  "failure_conditions": [
+    "empty_response",
+    "timeout",
+    "refusal"
+  ]
+}
+

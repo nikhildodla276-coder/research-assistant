@@ -1,0 +1,65 @@
+{
+  "fixture_id": "structured_json_v1",
+  "version": "1.0.0",
+  "domain": "generic",
+  "objective": "Verify model produces valid JSON conforming strictly to a target JSON Schema.",
+  "input_payload": {
+    "prompt": "Extract role title, required years of experience, and programming languages as JSON from this brief: 'Senior Backend Engineer with 5+ years experience building distributed services in Python and Go.'",
+    "expected_schema_name": "JobRoleSchema"
+  },
+  "required_behavior": [
+    "valid_json",
+    "matches_json_schema",
+    "required_fields_present"
+  ],
+  "expected_structure": {
+    "type": "object",
+    "required": [
+      "role_title",
+      "min_years_experience",
+      "programming_languages"
+    ],
+    "properties": {
+      "role_title": {
+        "type": "string"
+      },
+      "min_years_experience": {
+        "type": "integer"
+      },
+      "programming_languages": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "evaluation_rules": [
+    {
+      "rule": "valid_json",
+      "expected": true
+    },
+    {
+      "rule": "schema_conformance",
+      "expected": 1.0
+    },
+    {
+      "rule": "required_fields",
+      "fields": [
+        "role_title",
+        "min_years_experience",
+        "programming_languages"
+      ]
+    }
+  ],
+  "allowed_variance": {
+    "key_order_independent": true,
+    "whitespace_agnostic": true
+  },
+  "failure_conditions": [
+    "malformed_json",
+    "missing_required_fields",
+    "type_mismatch"
+  ]
+}
+

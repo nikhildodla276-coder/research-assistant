@@ -1,0 +1,25 @@
+{
+  "candidate_id": "tavily_search",
+  "candidate_type": "RETRIEVAL_TOOL",
+  "provider_id": "tavily",
+  "technical_identifier": "tavily_search_api",
+  "display_name": "Tavily Search API",
+  "access_mode": "API",
+  "billing_status": "FREE_TIER",
+  "auth_env_var": "TAVILY_API_KEY",
+  "card_required": false,
+  "requires_user_approval": false,
+  "claimed_capabilities": [
+    "clean_search_snippets",
+    "web_retrieval",
+    "monthly_free_tier"
+  ],
+  "provenance": {
+    "source": "tavily_cloud",
+    "endpoint": "https://api.tavily.com/search"
+  },
+  "verification_state": "UNVERIFIED",
+  "freshness_ttl_days": 14,
+  "last_verified_at": null
+}
+

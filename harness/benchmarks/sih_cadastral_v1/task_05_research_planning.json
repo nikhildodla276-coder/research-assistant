@@ -1,0 +1,26 @@
+{
+  "benchmark_id": "sih_cadastral_v1",
+  "task_id": "sih_cadastral_05_research_planning",
+  "task_version": "1.0.0",
+  "task_category": "research_planning",
+  "task_description": "Generate a multi-step research plan for integrating legacy revenue maps with drone orthophotos.",
+  "input_prompt": "Formulate a 3-step structured research plan for modernizing urban cadastral maps by aligning legacy paper maps with high-resolution drone orthomosaics. Output a JSON object with keys 'primary_objective' and 'steps' (where steps is a list of strings).",
+  "expected_capability": "Construct structured research steps toward a complex technical objective.",
+  "expected_output_contract": {
+    "format": "json",
+    "required_keys": ["primary_objective", "steps"],
+    "min_items": 3
+  },
+  "domain": {
+    "name": "urban_cadastral_mapping",
+    "source_context": "SIH urban land-record problem domain",
+    "version": "v1"
+  },
+  "evaluation_dimensions": [
+    "valid_json",
+    "steps_list_presence",
+    "step_count"
+  ],
+  "safety_notes": "Controlled benchmark task. Offline execution only."
+}
+

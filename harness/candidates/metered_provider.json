@@ -1,0 +1,23 @@
+{
+  "candidate_id": "metered_openai_gpt4o",
+  "candidate_type": "INFERENCE_MODEL",
+  "provider_id": "openai",
+  "technical_identifier": "gpt-4o",
+  "display_name": "OpenAI GPT-4o (Pay-As-You-Go Metered)",
+  "access_mode": "API",
+  "billing_status": "METERED",
+  "auth_env_var": "OPENAI_API_KEY",
+  "card_required": true,
+  "requires_user_approval": true,
+  "claimed_capabilities": [
+    "multimodal_reasoning",
+    "complex_codegen"
+  ],
+  "provenance": {
+    "source": "openai_api"
+  },
+  "verification_state": "UNVERIFIED",
+  "freshness_ttl_days": 14,
+  "last_verified_at": null
+}
+

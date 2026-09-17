@@ -1,0 +1,25 @@
+{
+  "benchmark_id": "sih_cadastral_v1",
+  "task_id": "sih_cadastral_02_structured_extraction",
+  "task_version": "1.0.0",
+  "task_category": "structured_extraction",
+  "task_description": "Extract target accuracy, sensor type, and projection from cadastral RFP text.",
+  "input_prompt": "Extract the survey specifications from this text: 'The municipal land agency requires 5cm GSD aerial orthophoto mapping using calibrated RGB metric sensors projected in UTM Zone 43N (WGS84).' Output a JSON object with keys 'target_accuracy', 'sensor_type', and 'projection'.",
+  "expected_capability": "Accurately extract target technical parameters into structured JSON.",
+  "expected_output_contract": {
+    "format": "json",
+    "required_keys": ["target_accuracy", "sensor_type", "projection"]
+  },
+  "domain": {
+    "name": "urban_cadastral_mapping",
+    "source_context": "SIH urban land-record problem domain",
+    "version": "v1"
+  },
+  "evaluation_dimensions": [
+    "valid_json",
+    "key_presence",
+    "non_empty_values"
+  ],
+  "safety_notes": "Controlled benchmark task. Offline execution only."
+}
+

@@ -1,0 +1,23 @@
+{
+  "candidate_id": "aws_bedrock_claude",
+  "candidate_type": "INFERENCE_MODEL",
+  "provider_id": "aws_bedrock",
+  "technical_identifier": "anthropic.claude-3-5-sonnet",
+  "display_name": "AWS Bedrock Claude (Trial Credits with Card on File)",
+  "access_mode": "API",
+  "billing_status": "TRIAL_CREDITS",
+  "auth_env_var": "AWS_ACCESS_KEY_ID",
+  "card_required": true,
+  "requires_user_approval": true,
+  "claimed_capabilities": [
+    "deep_reasoning",
+    "advanced_code"
+  ],
+  "provenance": {
+    "source": "aws_console"
+  },
+  "verification_state": "UNVERIFIED",
+  "freshness_ttl_days": 14,
+  "last_verified_at": null
+}
+

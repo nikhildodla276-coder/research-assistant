@@ -1,0 +1,31 @@
+{
+  "fixture_id": "capability_probe_v1",
+  "version": "1.0.0",
+  "domain": "connectivity",
+  "objective": "Controlled short capability probe to verify adapter connectivity and contract satisfaction.",
+  "input_payload": {
+    "prompt": "Respond with the single word PONG if you are operational.",
+    "expected_output_format": "text"
+  },
+  "required_behavior": [
+    "non_empty_response",
+    "zero_secrets"
+  ],
+  "expected_structure": null,
+  "evaluation_rules": [
+    {
+      "rule": "non_empty",
+      "expected": true
+    }
+  ],
+  "allowed_variance": {
+    "case_insensitive": true,
+    "whitespace_trimmed": true
+  },
+  "failure_conditions": [
+    "empty_response",
+    "timeout",
+    "authentication_failure"
+  ]
+}
+

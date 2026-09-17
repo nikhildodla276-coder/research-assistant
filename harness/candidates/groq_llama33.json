@@ -1,0 +1,26 @@
+{
+  "candidate_id": "groq_llama33_70b",
+  "candidate_type": "INFERENCE_MODEL",
+  "provider_id": "groq",
+  "technical_identifier": "llama-3.3-70b-versatile",
+  "display_name": "Groq LLaMA 3.3 70B Versatile",
+  "access_mode": "API",
+  "billing_status": "FREE_TIER",
+  "auth_env_var": "GROQ_API_KEY",
+  "card_required": false,
+  "requires_user_approval": false,
+  "claimed_capabilities": [
+    "fast_inference",
+    "structured_json_output",
+    "context_128k",
+    "zero_cost_free_tier"
+  ],
+  "provenance": {
+    "source": "groq_cloud_free_tier",
+    "documentation": "https://console.groq.com/docs/models"
+  },
+  "verification_state": "UNVERIFIED",
+  "freshness_ttl_days": 14,
+  "last_verified_at": null
+}
+

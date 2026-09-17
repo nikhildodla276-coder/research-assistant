@@ -1,0 +1,25 @@
+{
+  "benchmark_id": "sih_cadastral_v1",
+  "task_id": "sih_cadastral_01_json_generation",
+  "task_version": "1.0.0",
+  "task_category": "structured_json_generation",
+  "task_description": "Generate a well-formed JSON object capturing plot boundary parameters without prose markdown wrappers.",
+  "input_prompt": "Output a single JSON object with keys 'plot_id', 'survey_number', and 'boundary_coordinates' representing plot 'P-101', survey 'SN-405', coordinates [[18.52, 73.85], [18.53, 73.86]]. Output strictly JSON.",
+  "expected_capability": "Generate valid JSON conforming to specified key constraints without prose prefix/suffix.",
+  "expected_output_contract": {
+    "format": "json",
+    "required_keys": ["plot_id", "survey_number", "boundary_coordinates"]
+  },
+  "domain": {
+    "name": "urban_cadastral_mapping",
+    "source_context": "SIH urban land-record problem domain",
+    "version": "v1"
+  },
+  "evaluation_dimensions": [
+    "valid_json",
+    "required_keys_present",
+    "structure_compliance"
+  ],
+  "safety_notes": "Controlled benchmark task. Offline execution only."
+}
+

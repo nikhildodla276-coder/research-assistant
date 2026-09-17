@@ -1,0 +1,24 @@
+{
+  "benchmark_id": "sih_cadastral_v1",
+  "task_id": "sih_cadastral_04_source_aware_grounding",
+  "task_version": "1.0.0",
+  "task_category": "source_aware_response",
+  "task_description": "Synthesize boundary dispute guidelines referencing provided source identifiers [SRC-01] and [SRC-02].",
+  "input_prompt": "Using only provided sources [SRC-01] (National Survey Standards: Boundary monuments must be established using dual-frequency GNSS) and [SRC-02] (Urban Revenue Code: Parcel disputes require joint inspection by Revenue Officer), describe how a parcel boundary is verified. Explicitly cite [SRC-01] and [SRC-02].",
+  "expected_capability": "Synthesize response citing explicit provided source tokens.",
+  "expected_output_contract": {
+    "format": "text",
+    "required_citations": ["[SRC-01]", "[SRC-02]"]
+  },
+  "domain": {
+    "name": "urban_cadastral_mapping",
+    "source_context": "SIH urban land-record problem domain",
+    "version": "v1"
+  },
+  "evaluation_dimensions": [
+    "citation_presence",
+    "source_awareness"
+  ],
+  "safety_notes": "Model claims must be tagged as MODEL_CLAIM_ONLY until verified."
+}
+
